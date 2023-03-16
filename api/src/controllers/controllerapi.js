@@ -60,12 +60,38 @@ const apidata = async ()=>{
 
 
 //recupero la información de la base de datos
+const bdData = async()=>{
+
+    try{
+        const doggieDb = await Dog.findAll({
+            include:{
+                model: Temperament,
+                attributes: ['name'],
+                through:{
+                    attributes:[],
+                }
+            }
+        })
+        return doggieDb
+    }catch(error){
+        console.log(error);
+    }
+
+}
 
 
+
+//concateno la información que se encuentra en bd y en la api
+const allData = async ()=>{
+    const apidog = await apidata();
+    const bddog = await bdData();
+    const all = apidog.concat(bddog);
+    return all
+}
 
 
 
 
 module.exports = {
-    apidata,
+    allData,
 }
