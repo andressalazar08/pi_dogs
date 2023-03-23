@@ -7,8 +7,13 @@ const Form = () =>{
     //creo y capturo el estado del formulario
     const [form,setForm] = useState({
         name: "",
+        min_height:"",
+        max_height:"",
+        min_weight:"",
+        max_weight:"",
         temperament: "",
-        life_span: ""
+        life_span: "",
+        image:""
     })
 
     //creamos un estado de errores para hacer validaciones
@@ -69,6 +74,26 @@ const Form = () =>{
                 </div>
 
                 <div>
+                    <label>Min Height: </label>
+                    <input type="number" value={form.min_height} onChange={changeHandler}  name="min_height" />
+                </div>
+
+                <div>
+                    <label>Max Height: </label>
+                    <input type="number" value={form.max_height} onChange={changeHandler}  name="max_height" />
+                </div>
+
+                <div>
+                    <label>Min Weight: </label>
+                    <input type="number" value={form.min_weight} onChange={changeHandler}  name="min_weight" />
+                </div>
+
+                <div>
+                    <label>Max Weight: </label>
+                    <input type="number" value={form.max_weight} onChange={changeHandler}  name="max_weight" />
+                </div>
+
+                <div>
                     <label>Temperament: </label>
                     <input type="text" value={form.temperament} onChange={changeHandler}  name="temperament" />
                 </div>
@@ -78,7 +103,12 @@ const Form = () =>{
                     <input type="text" value={form.life_span} onChange={changeHandler} name="life_span" />
                 </div>
 
-                <button type="submit">ENVIAR</button>
+                <div>
+                    <label>Image: </label>
+                    <input type="text" value={form.image} onChange={changeHandler} name="image" />
+                </div>
+
+                <button type="submit">CREAR</button>
 
             </form>
 
