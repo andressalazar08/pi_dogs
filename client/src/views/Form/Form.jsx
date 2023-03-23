@@ -4,13 +4,22 @@ const Form = () =>{
 
         //capturo el estado del formulario
 
-        const form = useState({
+        const [form,setForm] = useState({
             name: "",
             temperament: "",
             life_span: ""
         })
 
 
+    // cuando el usuario ingrese algo al input quiero que se ejecute una función que pueda modificar el estado
+    const changeHandler = (event) =>{
+        //lee lo que está en el input y lo guarda en el estado en la propiedad que corresponda
+        //event.target me indica quién dispara el
+        const property = event.target.name;
+        const value = event.target.value;
+        //seteo el estado al valor ingresado por el usuario donde corresponda
+        setForm({...form, [property]:value})
+    }
 
     return(
         <div>
@@ -18,18 +27,18 @@ const Form = () =>{
 
             <form>
                 <div>
-                    <label>Name</label>
-                    <input type="text" value={form.name}/>
+                    <label>Name: </label>
+                    <input name="nombre" type="text" value={form.name} onChange={changeHandler} />
                 </div>
 
                 <div>
-                    <label>Temperament</label>
-                    <input type="text" value={form.temperament}/>
+                    <label>Temperament: </label>
+                    <input name="temperamento" type="text" value={form.temperament} onChange={changeHandler}/>
                 </div>
 
                 <div>
-                    <label>Life Span</label>
-                    <input type="text" value={form.life_span} />
+                    <label>Life Span: </label>
+                    <input name="expectativa" type="text" value={form.life_span} onChange={changeHandler}/>
                 </div>
 
             </form>

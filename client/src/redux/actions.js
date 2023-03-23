@@ -8,7 +8,7 @@ export const FILTER_BY_SOURCE = "FILTER_BY_SOURCE"
 export const getDoggs = ()=>{
     //esta función si va a poder hacer el request al servidor
     return async function (dispatch){
-            const backendData = await axios.get(""); //Pendiente conectar
+            const backendData = await axios.get("http://localhost:3001/dogs"); //Pendiente conectar
 
             const doggs = backendData.data;
             dispatch({type:GET_DOGGS, payload: doggs})
@@ -20,7 +20,7 @@ export const getDoggs = ()=>{
 export const getDog = (id)=>{
 
     return async function(dispatch){
-        const backendData = await axios.get(`/${id}`);
+        const backendData = await axios.get(`http://localhost:3001/dogs/${id}`);
 
         const doggie = backendData.data;
         dispatch({type:GET_DOG, payload: doggie})
