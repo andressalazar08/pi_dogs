@@ -1,0 +1,11 @@
+.dogImage{
+    width: 10rem;
+    height: 10rem;
+}
+
+.doggieCard{
+    border: 2px solid rebeccapurple;
+    border-radius: 15px;
+    /* width: fit-content; */
+    /* height: fit-content; */
+}

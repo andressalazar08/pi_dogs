@@ -4,7 +4,8 @@
 // por ahora copio la salida el get al back
 
 import Card from "../Card/Card";
-
+import style from "./CardsContainer.module.css";
+import { useSelector } from "react-redux";// importo el hook para conectarr el estado global al componente
 
 const CardsContainer = () =>{
 
@@ -20,7 +21,8 @@ const CardsContainer = () =>{
           "temperament": "Stubborn, Curious, Playful, Adventurous, Active, Fun-loving"
         */
 
-
+    /*
+    ANULO EL ARRAY TEMPORAL
     const doggs = [
         {
           "id": "1",
@@ -1927,13 +1929,28 @@ const CardsContainer = () =>{
         }
       ]
 
+      */
+
+      const doggs =useSelector(state=>state.doggs)
+
+      /*
+      El objetivo es que los datos lleguen por estado
+      y se almacene en el store de redux
+      debe buscar la propiedad doggs que está en el estado global
+      debemos usar redux
+      const doggs =useSelector(state=>state.doggs)
+
+      */
+
+
     return(
-        <div>
+        <div className={style.container}>
                 {doggs.map(doggie=>{
                     return <Card
                         id={doggie.id}
                         name={doggie.name}
                         life_span={doggie.life_span}
+                        image={doggie.image}
                     />
                 })}
         </div>
