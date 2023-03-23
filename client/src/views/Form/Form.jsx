@@ -1,4 +1,6 @@
 import { useState } from "react";
+import axios from "axios";
+
 
 const Form = () =>{
 
@@ -45,11 +47,21 @@ const Form = () =>{
         // console.log("quiero hacer un cambio")
     }
 
+
+    const submitHandler=(event)=>{
+        event.preventDefault()
+        // alert("se apretó el botón submit")
+        //con esto reemplazo el post
+        axios.post("http://localhost:3001/dogs",form) //se le envía el estado del formulario
+        .then(res=>alert(res))
+        .catch(err=>alert(err))
+    }
+
     return(
         <div>
 
 
-            <form>
+            <form onSubmit={submitHandler}>
                 <div>
                     <label>Name: </label>
                     <input type="text" value={form.name} onChange={changeHandler} name="name"></input>
@@ -88,3 +100,16 @@ export default Form;
 "image": "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg",
 "temperament": "Stubborn, Curious, Playful, Adventurous, Active, Fun-loving"
 */
+
+
+/* ruta POST
+{
+    "name":"Dog test3",
+    "min_height": 10,
+    "min_weight": 10,
+    "max_height":20,
+    "max_weight":30,
+    "temperament":"Agile",
+    "life_span":"15 years",
+    "image":"https://cdn2.thedogapi.com/images/BJa4kx25X.jpg"
+}*/
