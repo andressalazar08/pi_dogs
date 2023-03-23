@@ -1,3 +1,5 @@
+import { GET_DOGGS } from "./actions";
+
 //el reducer es la función que está autorizada para modificar el estado global
 //OJO ESTE ES EL ESTADO GLOBAL
 const initialState={
@@ -6,6 +8,11 @@ const initialState={
 
 const rootReducer = (state=initialState, action)=>{
     switch(action.type){
+
+        case GET_DOGGS:
+            return {...state, doggs: action.payload}
+
+
         default:
             return{...state}
     }

@@ -16,7 +16,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
     rootReducer,
-    composeEnhancer(applyMiddleware(thunkMiddleware))
+    composeEnhancer(applyMiddleware(thunkMiddleware)) //El thunk middleware es el que me permitirá hacer las request al servidor
 
 )
 
