@@ -2,44 +2,71 @@ import { useState } from "react";
 
 const Form = () =>{
 
-        //capturo el estado del formulario
+    //creo y capturo el estado del formulario
+    const [form,setForm] = useState({
+        name: "",
+        temperament: "",
+        life_span: ""
+    })
 
-        const [form,setForm] = useState({
+    //creamos un estado de errores para hacer validaciones
+    const [errors, setErrors] = useState({
             name: "",
             temperament: "",
             life_span: ""
-        })
+    })
 
+    //esta función se encarga de validar los campos del formulario
+    const validate = (form) =>{
+        // if(typeof form.name!=="string"){
+        //     setErrors({...errors, name:""})
+        // }else{
+        //     setErrors({...errors, name:"hay un error en el name, debe ser un string"})
+        // }
+
+        if(form.name===""){
+            setErrors({...errors, name:"nombre vacío"})
+        }else{
+            setErrors({...errors, name:""})
+        }
+
+    }
 
     // cuando el usuario ingrese algo al input quiero que se ejecute una función que pueda modificar el estado
     const changeHandler = (event) =>{
         //lee lo que está en el input y lo guarda en el estado en la propiedad que corresponda
-        //event.target me indica quién dispara el
+        //event.target me indica quién dispara el evento
         const property = event.target.name;
         const value = event.target.value;
+        //indico que valide el estado form
+        validate({...form, [property]:value}) //debido a la demora, antes de modificar el estado se lo doy primero al validate
         //seteo el estado al valor ingresado por el usuario donde corresponda
-        setForm({...form, [property]:value})
+        setForm({...form, [property]:value}) //la operación de cambiar el estado demora
+        // console.log("quiero hacer un cambio")
     }
 
     return(
         <div>
-            <h1> Esta es la vista de Formulario</h1>
+
 
             <form>
                 <div>
                     <label>Name: </label>
-                    <input name="nombre" type="text" value={form.name} onChange={changeHandler} />
+                    <input type="text" value={form.name} onChange={changeHandler} name="name"></input>
+                    {errors.name && <span>{errors.name}</span>}
                 </div>
 
                 <div>
                     <label>Temperament: </label>
-                    <input name="temperamento" type="text" value={form.temperament} onChange={changeHandler}/>
+                    <input type="text" value={form.temperament} onChange={changeHandler}  name="temperament" />
                 </div>
 
                 <div>
                     <label>Life Span: </label>
-                    <input name="expectativa" type="text" value={form.life_span} onChange={changeHandler}/>
+                    <input type="text" value={form.life_span} onChange={changeHandler} name="life_span" />
                 </div>
+
+                <button type="submit">ENVIAR</button>
 
             </form>
 
