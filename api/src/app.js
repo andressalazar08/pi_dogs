@@ -11,7 +11,7 @@ const server = express();
 server.name = 'API';
 
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-server.use(bodyParser.json({ limit: '50mb' }));
+server.use(bodyParser.json({ limit: '50mb' }));//express tiene un middleware para tratar los objetos json que puedan llegar por body
 server.use(cookieParser());
 server.use(morgan('dev')); //Indico que se use el middleware morgan
 

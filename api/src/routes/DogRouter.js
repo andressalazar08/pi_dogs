@@ -10,7 +10,7 @@ router.get('/', async(req,res)=>{
 
     let { name } = req.query;
 
-    const datos = await allData();
+    const datos = await allData(); //llamamos a la función que obtiene los datos
 
     if(name){
         //si me envían datos por query
