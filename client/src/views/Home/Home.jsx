@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 //importamos la action que queremos despachar
 import { getDoggs } from "../../redux/actions";
-
+import ContainerOptionsc from "../../components/ContainerOptions/ContainerOptions";
 
 const Home = () =>{
 
@@ -19,6 +19,7 @@ const Home = () =>{
     return(
         <>
             <h1> Esta es la vista de Home</h1>
+            <ContainerOptionsc />
             <CardsContainer />
 
         </>

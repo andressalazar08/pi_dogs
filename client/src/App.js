@@ -7,6 +7,7 @@ import { Home, Landing, Form, Detail } from "./views/index"; //importo todas las
 import { Route, useLocation } from "react-router-dom";
 //Importamos la barra de navegación
 import NavBarapp from "./components/NavBar/NavBar";
+// import ContainerOptions from "./components/ContainerOptions/ContainerOptions";
 
 
 function App() {
@@ -43,7 +44,8 @@ function App() {
       </Route>
 
       <Route exact path="/home">
-        <Home />
+         <Home />
+
       </Route>
 
        {/* El nombre de la ruta lo dejo con create */}
