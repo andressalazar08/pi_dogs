@@ -1,0 +1,9 @@
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid blue;
+    border-radius: 0.9rem;
+    padding: 1rem;
+}
+
