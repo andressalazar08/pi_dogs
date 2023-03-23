@@ -7,7 +7,7 @@ const TemperamentRoute = require('./TemperamentRouter'); //importo la ruta de te
 
 const router = Router();
 
-// Configurar los routers
+// Configurar los routers y modularizo
 // Ejemplo: router.use('/auth', authRouter);
 router.use('/dogs', Dogruta);
 router.use('/temperaments', TemperamentRoute);
