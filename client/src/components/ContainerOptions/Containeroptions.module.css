@@ -7,3 +7,20 @@
     padding: 1rem;
     margin-bottom: 1rem;
 }
+
+
+.containerFilters{
+    border: 1px solid green;
+    border-radius: 0.9rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+.searchInputs{
+    border: 1px solid rgb(0, 90, 128);
+    border-radius: 0.9rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}

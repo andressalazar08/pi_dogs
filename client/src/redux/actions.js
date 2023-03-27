@@ -1,7 +1,9 @@
 import axios from "axios";
 export const GET_DOGGS = "GET_DOGGS";
 export const GET_DOG = "GET_DOG";
-export const FILTER_BY_SOURCE = "FILTER_BY_SOURCE"
+export const FILTER_BY_SOURCE = "FILTER_BY_SOURCE";
+export const GET_DOG_NAME = "GET_DOG_NAME";
+export const ORDER_BY_NAME = "ORDER_BY_NAME";
 
 
 //esta función se denomina action creator trae todos los doggs
@@ -32,3 +34,28 @@ export const getDog = (id)=>{
 // export const filterBySource = ()=>{
 //     dispatch({type:FILTER_BY_SOURCE})
 // }
+
+// Esta función me administra la petición al servidor por name
+export const getDogName = (name)=>{
+
+    return async function(dispatch){
+        try{
+            const doggie = await axios.get("http://localhost:3001/dogs?name="+name)
+            return dispatch({type:GET_DOG_NAME, payload:doggie.data})
+
+        }catch(error){
+            return dispatch({type:GET_DOG_NAME, payload:"error"})
+
+        }
+    }
+
+}
+
+
+export const orderByName = (payload)=>{
+    return function (dispatch){
+        return dispatch({type: ORDER_BY_NAME, payload:payload})
+    }
+
+}
+

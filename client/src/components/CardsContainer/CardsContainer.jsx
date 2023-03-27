@@ -1931,7 +1931,7 @@ const CardsContainer = () =>{
 
       */
 
-      const doggs =useSelector(state=>state.doggs) //El componente está atento a los cambios del estado global
+      const doggs =useSelector(state=>state.doggsfiltered) //El componente está atento a los cambios del estado global
 
       /*
       El objetivo es que los datos lleguen por estado
@@ -1951,6 +1951,7 @@ const CardsContainer = () =>{
                         name={doggie.name}
                         life_span={doggie.life_span}
                         image={doggie.image}
+                        key={doggie.id}
                     />
                 })}
         </div>
