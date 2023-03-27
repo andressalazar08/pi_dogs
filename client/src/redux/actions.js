@@ -4,6 +4,7 @@ export const GET_DOG = "GET_DOG";
 export const FILTER_BY_SOURCE = "FILTER_BY_SOURCE";
 export const GET_DOG_NAME = "GET_DOG_NAME";
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
+export const ORDER_BY_WEIGHT = "ORDER_BY_WEIGHT";
 
 
 //esta función se denomina action creator trae todos los doggs
@@ -51,7 +52,7 @@ export const getDogName = (name)=>{
 
 }
 
-
+//función para administrar el action de order by name
 export const orderByName = (payload)=>{
     return function (dispatch){
         return dispatch({type: ORDER_BY_NAME, payload:payload})
@@ -59,3 +60,11 @@ export const orderByName = (payload)=>{
 
 }
 
+
+//función para administrar el action de order by weight
+export const orderByWeight = (payload)=>{
+    return function (dispatch){
+        return dispatch({type: ORDER_BY_WEIGHT, payload:payload})
+    }
+
+}

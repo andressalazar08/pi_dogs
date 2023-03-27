@@ -1,4 +1,4 @@
-import { GET_DOGGS, GET_DOG_NAME, ORDER_BY_NAME } from "./actions";
+import { GET_DOGGS, GET_DOG_NAME, ORDER_BY_NAME, ORDER_BY_WEIGHT } from "./actions";
 
 //el reducer es la función que está autorizada para modificar el estado global
 //OJO ESTE ES EL ESTADO GLOBAL
@@ -23,7 +23,7 @@ const rootReducer = (state=initialState, action)=>{
 
         case ORDER_BY_NAME:
             let sortcriteria = action.payload;
-            console.log(action.payload)
+            console.log("entra al reducer")
             if(sortcriteria==='atoz'){
 
                 let sorteddata = [...state.doggsfiltered].sort((a, b) => {
@@ -45,16 +45,39 @@ const rootReducer = (state=initialState, action)=>{
                 }
             }
 
-            // state.doggs.sort(function(a,b){
-            //         if(a.name.toLowerCase()>b.name.toLowerCase()) {return 1}
-            //         if(b.name.toLowerCase()>a.name.toLowerCase()) {return -1}
-            //         return 0
-            //     }):
-            //     state.doggs.sort(function(a,b){
-            //             if(a.name.toLowerCase()>b.name.toLowerCase()) {return -1}
-            //             if(b.name.toLowerCase()>a.name.toLowerCase()) {return 1}
-            //             return 0
-            //         })
+
+            // "min_weight": 3,
+            // "max_weight": 6,
+            // "min_height": 23,
+            // "max_height": 29,
+
+
+        case ORDER_BY_WEIGHT:
+            let sortcriteriaw = action.payload;
+
+            if(sortcriteriaw==="max"){
+                let sorteddataw = [...state.doggsfiltered].sort((a,b)=>{
+                    return a.max_weight - b.max_weight
+                });
+
+                return{
+                    ...state,
+                    doggsfiltered:sorteddataw
+                }
+
+            }else{
+                let sorteddataw = [...state.doggsfiltered].sort((a,b)=>{
+                    return b.min_weight - a.min_weight
+                });
+
+
+                return{
+                    ...state,
+                    doggsfiltered:sorteddataw
+                }
+
+            }
+
 
 
 

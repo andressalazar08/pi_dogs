@@ -1,6 +1,6 @@
 import style from "./Containeroptions.module.css";
 import SearchField from "../SearchInput/Searchinput";//importo el componente SearchInput
-import { getDoggs,orderByName } from "../../redux/actions";
+import { getDoggs,orderByName, orderByWeight } from "../../redux/actions";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -19,12 +19,22 @@ const ContainerOptionsc = ()=>{
 
     //estado para el sort
     const [orden, setOrden] = useState("");
+
     //función para administrar el sort by name
     function handleSortName(event){
         event.preventDefault();
         dispatch(orderByName(event.target.value))
 
         setOrden(event.target.value)
+    }
+
+    //funcion para administrar el sort by weight
+    function handleSortWeight(event){
+        event.preventDefault();
+        dispatch(orderByWeight(event.target.value));
+        console.log("entra al aevento")
+        setOrden(event.target.value)
+
     }
 
 
@@ -46,10 +56,10 @@ const ContainerOptionsc = ()=>{
 
 
                 <div className={style.containerFilters}>
-                    <select>
-                            <option>Order by Weight  </option>
-                            <option>Max Weight</option>
-                            <option>Min Weight</option>
+                    <select onChange={handleSortWeight} defaultValue="Order by Weight">
+                            <option disabled>Order by Weight  </option>
+                            <option value="max">Max Weight</option>
+                            <option value="min">Min Weight</option>
 
                     </select>
 

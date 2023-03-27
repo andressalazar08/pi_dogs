@@ -1941,7 +1941,10 @@ const CardsContainer = () =>{
       const doggs =useSelector(state=>state.doggs)
 
       */
-
+            // "min_weight": 3,
+            // "max_weight": 6,
+            // "min_height": 23,
+            // "max_height": 29,
 
     return(
         <div className={style.container}>
@@ -1950,7 +1953,12 @@ const CardsContainer = () =>{
                         id={doggie.id}
                         name={doggie.name}
                         life_span={doggie.life_span}
+                        min_weight={doggie.min_weight}
+                        max_weight={doggie.max_weight}
+                        min_height={doggie.min_height}
+                        max_height={doggie.max_height}
                         image={doggie.image}
+
                         key={doggie.id}
                     />
                 })}
