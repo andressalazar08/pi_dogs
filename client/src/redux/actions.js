@@ -5,6 +5,8 @@ export const FILTER_BY_SOURCE = "FILTER_BY_SOURCE";
 export const GET_DOG_NAME = "GET_DOG_NAME";
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 export const ORDER_BY_WEIGHT = "ORDER_BY_WEIGHT";
+export const GET_TEMPERAMENTS = "GET_TEMPERAMENTS";
+export const FILTER_BY_TEMPERAMENT = "FILTER_BY_TEMPERAMENT";
 
 
 //esta función se denomina action creator trae todos los doggs
@@ -67,4 +69,26 @@ export const orderByWeight = (payload)=>{
         return dispatch({type: ORDER_BY_WEIGHT, payload:payload})
     }
 
+}
+
+
+
+//función para administrar el action de los temperamentos
+export const getTemperaments = ()=>{
+    return async function(dispatch){
+        var jsontemp = await axios("http://localhost:3001/temperaments")
+
+        return dispatch({type:GET_TEMPERAMENTS, payload:jsontemp.data})
+    }
+}
+
+
+
+
+//función para administrar el temperament
+export const filterByTemperament=(payload)=>{
+    return function(dispatch){
+        return dispatch({type:FILTER_BY_TEMPERAMENT, payload:payload })
+
+    }
 }

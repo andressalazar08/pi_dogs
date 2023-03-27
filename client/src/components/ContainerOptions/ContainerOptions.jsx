@@ -1,6 +1,6 @@
 import style from "./Containeroptions.module.css";
 import SearchField from "../SearchInput/Searchinput";//importo el componente SearchInput
-import { getDoggs,orderByName, orderByWeight } from "../../redux/actions";
+import { getDoggs,orderByName, orderByWeight, getTemperaments, filterByTemperament } from "../../redux/actions";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -12,10 +12,12 @@ const ContainerOptionsc = ()=>{
 
     useEffect(()=>{
         dispatch(getDoggs());
+        dispatch(getTemperaments())
     },[dispatch])
 
     const allDogs = useSelector((state)=>state.doggs);
-    // const allTemperament = useSelector((state)=>state.temperaments)
+    //Guardo en una variable los tempresamentos para hacerlos disponibles al selector
+    const allTemperaments = useSelector((state)=>state.temperaments)
 
     //estado para el sort
     const [orden, setOrden] = useState("");
@@ -32,9 +34,15 @@ const ContainerOptionsc = ()=>{
     function handleSortWeight(event){
         event.preventDefault();
         dispatch(orderByWeight(event.target.value));
-        console.log("entra al aevento")
+        console.log("entra al evento")
         setOrden(event.target.value)
 
+    }
+
+
+    function handleFilterTemperament(event){
+        event.preventDefault();
+        dispatch(filterByTemperament(event.target.value));
     }
 
 
@@ -77,9 +85,16 @@ const ContainerOptionsc = ()=>{
                 </div>
 
                 <div className={style.containerFilters}>
-                    <select>
-                            <option>Temperaments</option>
-                            <option>All</option>
+                    <select onChange={handleFilterTemperament} defaultValue="Temperaments">
+                            <option disabled>Temperaments </option>
+                            <option value="all">All</option>
+
+                            {/* Mapeo los options del selector */}
+                            {
+                                allTemperaments.map((element)=>{
+                                    return <option key={element.id} value={element.name}> {element.name}</option>
+                                })
+                            }
 
                     </select>
 

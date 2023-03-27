@@ -1,10 +1,11 @@
-import { GET_DOGGS, GET_DOG_NAME, ORDER_BY_NAME, ORDER_BY_WEIGHT } from "./actions";
+import { GET_DOGGS, GET_DOG_NAME, ORDER_BY_NAME, ORDER_BY_WEIGHT, GET_TEMPERAMENTS, FILTER_BY_TEMPERAMENT } from "./actions";
 
 //el reducer es la función que está autorizada para modificar el estado global
 //OJO ESTE ES EL ESTADO GLOBAL
 const initialState={
     doggs:[], //cuando inicie la aplicación tendra un estado inicial vacío
-    doggsfiltered:[] //cuando carga home no se ha filtrado nada
+    doggsfiltered:[], //cuando carga home no se ha filtrado nada
+    temperaments:[],
 }
 
 const rootReducer = (state=initialState, action)=>{
@@ -79,6 +80,45 @@ const rootReducer = (state=initialState, action)=>{
             }
 
 
+        case GET_TEMPERAMENTS:
+            return{
+                ...state,
+                temperaments:action.payload
+            }
+
+
+        case FILTER_BY_TEMPERAMENT:
+
+            const doggfilt = state.doggsfiltered;
+
+            let tempscriteria = action.payload;
+
+            if(tempscriteria==="all"){
+
+                let filteredtemp = doggfilt
+                return{
+                    ...state,
+                    doggsfiltered:filteredtemp
+                }
+            }else{
+
+                //si el usuario escoge un temperamento
+                //debo traer todos los perros que incluyan ese temperamento
+                let filteredtemp = doggfilt.filter((element)=>{
+                    if(element.temperament){
+                        if(element.temperament.includes(action.payload)){
+                            return element;
+                        }
+                    }
+
+                })
+
+                console.log("entro")
+                return{
+                    ...state,
+                    doggsfiltered:filteredtemp
+                }
+            }
 
 
         default:

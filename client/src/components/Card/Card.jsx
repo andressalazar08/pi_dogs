@@ -13,6 +13,7 @@ const Card = (props)=>{
             <p>Life Span: {props.life_span}</p>
             <p>Min Weight: {props.min_weight}</p>
             <p>Max Weight: {props.max_weight}</p>
+            <p>Temperament: {props.temperament}</p>
             <img src={props.image} alt={props.id} className={style.dogImage}/>
         </div>
     )

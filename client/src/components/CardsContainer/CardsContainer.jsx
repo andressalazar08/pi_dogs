@@ -1957,6 +1957,7 @@ const CardsContainer = () =>{
                         max_weight={doggie.max_weight}
                         min_height={doggie.min_height}
                         max_height={doggie.max_height}
+                        temperament={doggie.temperament}
                         image={doggie.image}
 
                         key={doggie.id}
