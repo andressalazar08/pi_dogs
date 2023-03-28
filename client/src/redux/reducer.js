@@ -1,4 +1,4 @@
-import { GET_DOGGS, GET_DOG_NAME, ORDER_BY_NAME, ORDER_BY_WEIGHT, GET_TEMPERAMENTS, FILTER_BY_TEMPERAMENT } from "./actions";
+import { GET_DOGGS, GET_DOG_NAME, ORDER_BY_NAME, ORDER_BY_WEIGHT, GET_TEMPERAMENTS, FILTER_BY_TEMPERAMENT, FILTER_CREATED } from "./actions";
 
 //el reducer es la función que está autorizada para modificar el estado global
 //OJO ESTE ES EL ESTADO GLOBAL
@@ -6,6 +6,7 @@ const initialState={
     doggs:[], //cuando inicie la aplicación tendra un estado inicial vacío
     doggsfiltered:[], //cuando carga home no se ha filtrado nada
     temperaments:[],
+    detail:[]
 }
 
 const rootReducer = (state=initialState, action)=>{
@@ -119,6 +120,37 @@ const rootReducer = (state=initialState, action)=>{
                     doggsfiltered:filteredtemp
                 }
             }
+
+
+        case FILTER_CREATED:
+            const allDoggies = state.doggs;
+
+            const filterCriteria = action.payload;
+
+            if(filterCriteria === "created"){
+                let onlycreated = allDoggies.filter(element=>element.id.toString().length > 4)
+                return{
+                    ...state,
+                    doggsfiltered:onlycreated
+                }
+            }
+
+            if(filterCriteria === "api"){
+                let onlyapi = allDoggies.filter(element=>element.id.length <=4)
+                return{
+                    ...state,
+                    doggsfiltered:onlyapi
+                }
+            }
+
+            if(filterCriteria==="all"){
+                return{
+                    ...state,
+                    doggsfiltered:allDoggies
+                }
+            }
+
+
 
 
         default:

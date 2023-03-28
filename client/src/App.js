@@ -53,7 +53,7 @@ function App() {
         <Form />
       </Route>
 
-      <Route exact path="/detail">
+      <Route exact path="/dogs/:id">
         <Detail />
       </Route>
 

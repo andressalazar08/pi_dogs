@@ -7,6 +7,7 @@ export const ORDER_BY_NAME = "ORDER_BY_NAME";
 export const ORDER_BY_WEIGHT = "ORDER_BY_WEIGHT";
 export const GET_TEMPERAMENTS = "GET_TEMPERAMENTS";
 export const FILTER_BY_TEMPERAMENT = "FILTER_BY_TEMPERAMENT";
+export const FILTER_CREATED = "FILTER_CREATED";
 
 
 //esta función se denomina action creator trae todos los doggs
@@ -91,4 +92,14 @@ export const filterByTemperament=(payload)=>{
         return dispatch({type:FILTER_BY_TEMPERAMENT, payload:payload })
 
     }
+}
+
+
+
+//función para administrar el filter by api or form
+export const filterCreated=(payload)=>{
+    return function(dispatch){
+        return dispatch({type:FILTER_CREATED, payload:payload})
+    }
+
 }

@@ -1,6 +1,6 @@
 import style from "./Containeroptions.module.css";
 import SearchField from "../SearchInput/Searchinput";//importo el componente SearchInput
-import { getDoggs,orderByName, orderByWeight, getTemperaments, filterByTemperament } from "../../redux/actions";
+import { getDoggs,orderByName, orderByWeight, getTemperaments, filterByTemperament, filterCreated } from "../../redux/actions";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -39,10 +39,17 @@ const ContainerOptionsc = ()=>{
 
     }
 
-
+    //función para administrar los temperamentos
     function handleFilterTemperament(event){
         event.preventDefault();
         dispatch(filterByTemperament(event.target.value));
+    }
+
+
+    //función para administrar los created o apis
+    function handleFilterCreated(event){
+        event.preventDefault();
+        dispatch(filterCreated(event.target.value))
     }
 
 
@@ -75,10 +82,10 @@ const ContainerOptionsc = ()=>{
 
 
                 <div className={style.containerFilters}>
-                    <select>
-                            <option>All  </option>
-                            <option>Created</option>
-                            <option>API</option>
+                    <select onChange={handleFilterCreated}>
+                            <option value="all">All  </option>
+                            <option value="created">Created</option>
+                            <option value="api">API</option>
 
                     </select>
 
