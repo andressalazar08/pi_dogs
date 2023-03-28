@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 //importamos la action que queremos despachar
 import { getDoggs } from "../../redux/actions";
 import ContainerOptionsc from "../../components/ContainerOptions/ContainerOptions";
+import Pages from "../../components/Paginator/Paginator";
+
+
 
 const Home = () =>{
 
@@ -20,6 +23,7 @@ const Home = () =>{
         <>
             <h1> Esta es la vista de Home</h1>
             <ContainerOptionsc />
+            <Pages />
             <CardsContainer />
 
         </>
