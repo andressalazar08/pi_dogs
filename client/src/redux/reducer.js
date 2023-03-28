@@ -1,4 +1,4 @@
-import { GET_DOGGS, GET_DOG_NAME, ORDER_BY_NAME, ORDER_BY_WEIGHT, GET_TEMPERAMENTS, FILTER_BY_TEMPERAMENT, FILTER_CREATED } from "./actions";
+import { GET_DOGGS, GET_DOG_NAME, ORDER_BY_NAME, ORDER_BY_WEIGHT, GET_TEMPERAMENTS, FILTER_BY_TEMPERAMENT, FILTER_CREATED, GET_DETAIL, CLEAR_DETAIL } from "./actions";
 
 //el reducer es la función que está autorizada para modificar el estado global
 //OJO ESTE ES EL ESTADO GLOBAL
@@ -150,8 +150,17 @@ const rootReducer = (state=initialState, action)=>{
                 }
             }
 
+        case GET_DETAIL:
+            return{
+                ...state,
+                detail:action.payload
+            }
 
-
+        case CLEAR_DETAIL:
+            return{
+                ...state,
+                detail: {}
+            }
 
         default:
             return{...state}
