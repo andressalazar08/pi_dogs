@@ -1,8 +1,10 @@
 .container{
-    border: 5px solid green;
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
     gap:1rem;
 
 }

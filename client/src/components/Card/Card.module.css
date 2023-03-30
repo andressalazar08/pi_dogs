@@ -1,24 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
 
+
+:root{
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+    --Link: hsl(228, 45%, 44%);
+    --PaginatorBG: #0099cc;
+}
+
+
 .dogImage{
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1rem;
+    margin: 1rem;
 }
 
 .doggieCard{
-    border: 2px solid rebeccapurple;
+
+    background-color: var(--Very-dark-blue-card-BG);
     border-radius: 15px;
     font-family: 'Overlock', sans-serif;
     font-size: 1rem;
     text-align: center;
+    margin: 1rem;
+
     /* width: fit-content; */
     /* height: fit-content; */
 }
 
+.cardLink{
+
+    color:var(--PaginatorBG);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Overlock', sans-serif;
+}
+
+.headInfo{
+    margin: 0.4rem;
+
+}
 
 .subsection{
     display: flex;
     flex-direction: row;
+
+}
+
+.temperamentInfo{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+
+.temperamentInfo h4{
+
+    /* margin-right: 1rem; */
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+
+.gridtemps{
+    display:grid;
+    grid-area: 2/2;
 
 }
