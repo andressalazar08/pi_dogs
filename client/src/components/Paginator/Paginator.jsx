@@ -22,29 +22,34 @@ const Pages = ({ doggiesPerPage, allDoggies, pages, currentPage, currentDogs })=
     }
 
     return (
-        <ul>
+        <div className={style.paginatorItems}>
+
+                <div className={style.paginarotItemsDiv}>
+
                 {/* Previo e inicio */}
-                <li>
+                <div>
                     {/* botón inicio: setea el índice de página al inicio(1)*/}
-                    <button disabled={currentPage>1? false: true} onClick={()=>pages(1)}>{'<<'}</button>
+                    <button className={style.pagElement} disabled={currentPage>1? false: true} onClick={()=>pages(1)} >{'<<'}</button>
                     {/* botón anterior: setea el índice de página en el anterior */}
-                    <button disabled={currentPage>1? false: true} onClick={()=>pages(currentPage-1)}>Prev</button>
-                </li>
+                    <button className={style.pagElement} disabled={currentPage>1? false: true} onClick={()=>pages(currentPage-1)} >Prev</button>
+                </div>
 
 
-                <li>
+                <div>
                     <h1>{currentPage}</h1>
-                </li>
+                </div>
 
                 {/* Siguiente y final */}
-                <li>
+                <div>
                     {/* botón siguiente: setea el índice de página en el siguiente */}
-                    <button disabled={currentPage < pageNumbers.length? false: true} onClick={()=>pages(currentPage+1)}>Next</button>
+                    <button   className={style.pagElement} disabled={currentPage < pageNumbers.length? false: true} onClick={()=>pages(currentPage+1)}>Next</button>
                     {/* botón final: setea el indice de página hasta el último */}
-                    <button disabled={currentPage<pageNumbers.length? false:true} onClick={()=>pages(pageNumbers.length)}>{'>>'}</button>
-                </li>
+                    <button className={style.pagElement} disabled={currentPage<pageNumbers.length? false:true} onClick={()=>pages(pageNumbers.length)} >{'>>'}</button>
+                </div>
 
-        </ul>
+                </div>
+
+        </div>
     );
     }else{
         return null;

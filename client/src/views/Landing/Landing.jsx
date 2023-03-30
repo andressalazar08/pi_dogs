@@ -21,7 +21,7 @@ const Landing = () =>{
                     <h2 className={style.mainContainerTitle}> Dogs Proyecto Individual</h2>
 
                     <div className={style.contenedorImagen}>
-                            <img src={imagedog} className={style.mainImage}></img>
+                            <img src={imagedog} className={style.mainImage} alt="imagedog"></img>
                     </div>
 
 
@@ -37,15 +37,15 @@ const Landing = () =>{
                         <h3 className={style.datosCabezeraTitle}>Tech stack:</h3>
 
                         <div className={style.datosCabezeraimgs}>
-                            <img src={imagereact} className={style.techImage1}></img>
-                            <img src={imageredux} className={style.techImage}></img>
+                            <img src={imagereact} className={style.techImage1} alt="react"></img>
+                            <img src={imageredux} className={style.techImage} alt="redux"></img>
                         </div>
 
 
                         <div className={style.datosCabezeraimgs2}>
-                            <img src={imagepostgresql} className={style.techImage3}></img>
-                            <img src={imagenodejs} className={style.techImage4}></img>
-                            <img src={imageexpress} className={style.techImage4}></img>
+                            <img src={imagepostgresql} className={style.techImage3} alt="postgres"></img>
+                            <img src={imagenodejs} className={style.techImage4} alt="nodejs"></img>
+                            <img src={imageexpress} className={style.techImage4}  alt="express"></img>
 
 
                         </div>

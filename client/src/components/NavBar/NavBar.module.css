@@ -19,9 +19,12 @@
     color:var(--White);
 }
 
-.mainContainerLink{
+.linkStyle{
 
     color:var(--Soft-blue);
+    text-decoration: none;
+    font-size: 1.5rem;
+
 
 }
 

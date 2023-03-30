@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+
+.paginatorItems{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:stretch;
+
+}
+
+.paginarotItemsDiv{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.pagElement{
+    margin: 0.5rem;
+    font-size: 1.3rem;
+    border-radius: 0.2rem;
+
+}
+
+
+.paginarotItemsDiv button{
+    border-radius: 0.2rem;
+    border: 1px solid #0066cc;
+    background-color: #0099cc;
+    color: #ffffff;
+    padding: 0px 10px;
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Overlock', sans-serif;
+}
