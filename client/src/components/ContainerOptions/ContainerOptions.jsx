@@ -62,7 +62,7 @@ const ContainerOptionsc = ({pages})=>{
 
                 <div className={style.containerFilters}>
 
-                    <select onChange={handleSortName} defaultValue="Order Alphabetically">
+                    <select onChange={handleSortName} defaultValue="Order Alphabetically" className={style.selectOptions}>
                             <option disabled>Order Alphabetically</option>
                             <option value="atoz">A to Z</option>
                             <option value="ztoa">Z to A</option>
@@ -73,7 +73,7 @@ const ContainerOptionsc = ({pages})=>{
 
 
                 <div className={style.containerFilters}>
-                    <select onChange={handleSortWeight} defaultValue="Order by Weight">
+                    <select onChange={handleSortWeight} defaultValue="Order by Weight" className={style.selectOptions}>
                             <option disabled>Order by Weight  </option>
                             <option value="max">Max Weight</option>
                             <option value="min">Min Weight</option>
@@ -84,7 +84,7 @@ const ContainerOptionsc = ({pages})=>{
 
 
                 <div className={style.containerFilters}>
-                    <select onChange={handleFilterCreated}>
+                    <select onChange={handleFilterCreated} className={style.selectOptions}>
                             <option value="all">All  </option>
                             <option value="created">Created</option>
                             <option value="api">API</option>
@@ -94,7 +94,7 @@ const ContainerOptionsc = ({pages})=>{
                 </div>
 
                 <div className={style.containerFilters}>
-                    <select onChange={handleFilterTemperament} defaultValue="Temperaments">
+                    <select onChange={handleFilterTemperament} defaultValue="Temperaments" className={style.selectOptions}>
                             <option disabled>Temperaments </option>
                             <option value="all">All</option>
 

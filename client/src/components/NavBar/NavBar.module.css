@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+
+
 :root{
     --Soft-blue: hsl(215, 51%, 70%);
     --Cyan: hsl(178, 100%, 50%);
@@ -14,7 +18,7 @@
     flex-direction: row;
     justify-content: space-around;
     /* border: 1px solid blue; */
-    border-radius: 0.9rem;
+    /* border-radius: 0.9rem; */
     padding: 1rem;
     color:var(--White);
 }
@@ -23,7 +27,8 @@
 
     color:var(--Soft-blue);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-family: 'Overlock', sans-serif;
 
 
 }

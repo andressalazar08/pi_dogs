@@ -28,7 +28,7 @@ const SearchField = ()=>{
         <div>
             <div className={style.searchbox}>
 
-                    <input type="text" name="" placeholder="Search" onChange={(event)=>handleInputChange(event)} />
+                    <input type="text" name="" placeholder="Search Name" onChange={(event)=>handleInputChange(event)} />
                     <button onClick={(event)=>handleSearch(event)}> Search </button>
             </div>
         </div>

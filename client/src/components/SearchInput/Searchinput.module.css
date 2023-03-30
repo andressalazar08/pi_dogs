@@ -2,3 +2,17 @@
 
 
 }
+
+
+
+.searchbox button{
+    border-radius: 0.2rem;
+    border: 1px solid var(--PaginatorBG);
+    background-color: var(--PaginatorBG);
+    color: #ffffff;
+    padding: 1px 10px;
+    font-size: 0.9rem;
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Overlock', sans-serif;
+    margin-left: 0.5rem;
+}
