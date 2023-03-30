@@ -8,9 +8,12 @@ import style from "./Paginator.module.css"
 const Pages = ({ doggiesPerPage, allDoggies, pages, currentPage, currentDogs })=>{
 
     //Variables iniciales
-    allDoggies=20;
-    doggiesPerPage=5;
-    currentPage=1;
+    // allDoggies=20;
+    // doggiesPerPage=5;
+    // currentPage=1;
+
+    //si hay perros por mostrar se genera una nueva página con el listado de perros por mostrar
+    if(currentDogs){
 
     const pageNumbers = []; // array para indicar cuántas páginas se renderizan
 
@@ -22,8 +25,10 @@ const Pages = ({ doggiesPerPage, allDoggies, pages, currentPage, currentDogs })=
         <ul>
                 {/* Previo e inicio */}
                 <li>
-                    <button>{'<<'}</button>
-                    <button>Prev</button>
+                    {/* botón inicio: setea el índice de página al inicio(1)*/}
+                    <button disabled={currentPage>1? false: true} onClick={()=>pages(1)}>{'<<'}</button>
+                    {/* botón anterior: setea el índice de página en el anterior */}
+                    <button disabled={currentPage>1? false: true} onClick={()=>pages(currentPage-1)}>Prev</button>
                 </li>
 
 
@@ -33,12 +38,17 @@ const Pages = ({ doggiesPerPage, allDoggies, pages, currentPage, currentDogs })=
 
                 {/* Siguiente y final */}
                 <li>
-                    <button>{'>>'}</button>
-                    <button>Next</button>
+                    {/* botón siguiente: setea el índice de página en el siguiente */}
+                    <button disabled={currentPage < pageNumbers.length? false: true} onClick={()=>pages(currentPage+1)}>Next</button>
+                    {/* botón final: setea el indice de página hasta el último */}
+                    <button disabled={currentPage<pageNumbers.length? false:true} onClick={()=>pages(pageNumbers.length)}>{'>>'}</button>
                 </li>
 
         </ul>
     );
+    }else{
+        return null;
+    }
 
 }
 
