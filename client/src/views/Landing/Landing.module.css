@@ -1,0 +1,185 @@
+:root{
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+    --Link: hsl(228, 45%, 44%);
+}
+
+/* --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%); */
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--Very-dark-blue-main-BG);
+    color:var(--Soft-blue)
+}
+
+
+.mainContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.mainContainerTitle{
+    color: var(--Soft-blue);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.secondContainer{
+    background-color: var(--Very-dark-blue-card-BG);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 21.8rem;
+}
+
+
+
+
+.contenedorImagen{
+    position:relative;
+    width: 100%;
+    max-width: 18.75rem;
+    cursor:pointer;
+}
+
+
+.mainImage{
+    /* background-image: url('./doggie.jpg'); */
+    /* background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; */
+    height: 100%;
+    width: 100%;
+    min-height: 18.75rem;
+    border-radius: 0.5rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.textoPrincipal{
+    margin: 1.5rem 0 0.1rem 0;
+}
+
+
+
+
+.datosCabezera{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-bottom: 0.5rem;
+    margin-top:0.5rem;
+}
+
+.datosCabezeraTitle{
+    color: var(--Soft-blue);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+
+.datosCabezeraelements{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    color: var(--Soft-blue)
+}
+
+
+.datosCabezeraimgs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.datosCabezeraimgs2{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.techImage{
+    height: 2rem;
+    width: 5rem;
+}
+.techImage1{
+    height: 2.5rem;
+    width: 5rem;
+}
+
+
+.techImage3{
+height: 2rem;
+}
+
+
+.techImage4{
+    height: 2.5rem;
+}
+
+
+
+.autor{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:1rem;
+}
+
+
+
+
+
+
+.linea{
+    border: 1px solid var(--White);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+}
+
+
+.attirbution{
+    font-size:2rem;
+    text-align: center;
+}
+
+.attribution h3{
+    color:var(--Soft-blue);
+    text-align: center;
+    margin:1rem;
+}
+
+.attribution a{
+    color:var(--Link);
+    text-align: center;
+
+}
