@@ -27,7 +27,7 @@ const SearchField = ()=>{
 
         <div>
             <div className={style.searchbox}>
-                    <h3>componente search</h3>
+
                     <input type="text" name="" placeholder="Search" onChange={(event)=>handleInputChange(event)} />
                     <button onClick={(event)=>handleSearch(event)}> Search </button>
             </div>

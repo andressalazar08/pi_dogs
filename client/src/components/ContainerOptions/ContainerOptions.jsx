@@ -58,7 +58,7 @@ const ContainerOptionsc = ({pages})=>{
     return(
 
             <div className={style.containerOps}>
-                <h1>Opciones de búsqueda</h1>
+
 
                 <div className={style.containerFilters}>
 
@@ -114,7 +114,7 @@ const ContainerOptionsc = ({pages})=>{
                 <div className={style.searchInputs}>
 
                 {/* Componente Search Input */}
-                    <h1>Search Bar</h1>
+
                     <SearchField/>
 
 

@@ -43,7 +43,7 @@ const Home = () =>{
 
     return(
         <>
-            <h1> Esta es la vista de Home</h1>
+
             <ContainerOptionsc
                 pages={pages}
             />
@@ -55,7 +55,7 @@ const Home = () =>{
                 currentDogs={currentDogs}
             />
             <CardsContainer
-                currentDogs={currentDogs}
+                currentDogs={currentDogs} //le entrego por props el listado de doggies filtrados a mostrar
             />
 
         </>

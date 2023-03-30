@@ -13,7 +13,7 @@ const Card = (props)=>{
             <Link to={'/dogs/'+props.id}>
             <p>Name: {props.name}</p>
             </Link>
-            <p>Life Span: {props.life_span}</p>
+
             <p>Min Weight: {props.min_weight}</p>
             <p>Max Weight: {props.max_weight}</p>
             <p>Temperament: {props.temperament}</p>

@@ -7,3 +7,9 @@
 .detailContainer{
     border: 6px solid blue
 }
+
+
+.detailDogImage{
+    width:20rem;
+    height: 20rem;
+}
