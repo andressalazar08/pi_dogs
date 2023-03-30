@@ -20,7 +20,7 @@ const Home = () =>{
         dispatch(getDoggs());
     },[dispatch]) //la variable la ponemos dentro del array de dependencias para que no llore la consola
 
-    const allDoggies = useSelector((state)=>state.doggs)
+    const allDoggies = useSelector((state)=>state.doggsfiltered)
     //Definición de estados para el paginador
     const [currentPage, setCurrentPage] = useState(1); //el estado inicial del paginador es 1
     //Definición de tarjetas por página
@@ -35,7 +35,7 @@ const Home = () =>{
     //Conjunto de doggies que se presentarán en la vista actual
     const currentDogs = allDoggies.slice(indexOfFirstDoggie, indexOfLastDoggie);
 
-     //función para setar el número de la página y que entrará como argumento
+     //función para setear el número de la página y que entrará como argumento
     const pages=(pageNumber)=>{
         setCurrentPage(pageNumber);
     }
@@ -44,7 +44,9 @@ const Home = () =>{
     return(
         <>
             <h1> Esta es la vista de Home</h1>
-            <ContainerOptionsc />
+            <ContainerOptionsc
+                pages={pages}
+            />
             <Pages
                 doggiesPerPage={doggiesPerPage}
                 allDoggies={allDoggies.length}
@@ -52,7 +54,9 @@ const Home = () =>{
                 currentPage={currentPage}
                 currentDogs={currentDogs}
             />
-            <CardsContainer />
+            <CardsContainer
+                currentDogs={currentDogs}
+            />
 
         </>
     )

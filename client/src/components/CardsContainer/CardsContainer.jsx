@@ -7,7 +7,7 @@ import Card from "../Card/Card";
 import style from "./CardsContainer.module.css";
 import { useSelector } from "react-redux";// importo el hook para conectarr el estado global al componente
 
-const CardsContainer = () =>{
+const CardsContainer = ({currentDogs}) =>{
 
         /* EJEMPLO DEL ARRAY
           "id": "1",
@@ -1931,8 +1931,8 @@ const CardsContainer = () =>{
 
       */
 
-      const doggs =useSelector(state=>state.doggsfiltered) //El componente está atento a los cambios del estado global
-
+      // const doggs =useSelector(state=>state.doggsfiltered) //El componente está atento a los cambios del estado global
+         const doggs = currentDogs;
       /*
       El objetivo es que los datos lleguen por estado
       y se almacene en el store de redux

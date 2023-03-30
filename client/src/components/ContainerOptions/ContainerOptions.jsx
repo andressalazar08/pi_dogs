@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 
-const ContainerOptionsc = ()=>{
+const ContainerOptionsc = ({pages})=>{
 
     const dispatch = useDispatch();
 
@@ -24,18 +24,18 @@ const ContainerOptionsc = ()=>{
 
     //función para administrar el sort by name
     function handleSortName(event){
-        event.preventDefault();
-        dispatch(orderByName(event.target.value))
-
-        setOrden(event.target.value)
+        event.preventDefault(); //ok
+        dispatch(orderByName(event.target.value))//ok
+        pages(1)//setea en 1 usando la función que se entrega por props
+        setOrden(event.target.value)//ok
     }
 
     //funcion para administrar el sort by weight
     function handleSortWeight(event){
-        event.preventDefault();
-        dispatch(orderByWeight(event.target.value));
-        console.log("entra al evento")
-        setOrden(event.target.value)
+        event.preventDefault(); //ok
+        dispatch(orderByWeight(event.target.value)); //ok
+        pages(1)//ok
+        setOrden(event.target.value) //ok
 
     }
 
@@ -43,13 +43,15 @@ const ContainerOptionsc = ()=>{
     function handleFilterTemperament(event){
         event.preventDefault();
         dispatch(filterByTemperament(event.target.value));
+        pages(1);
     }
 
 
     //función para administrar los created o apis
     function handleFilterCreated(event){
         event.preventDefault();
-        dispatch(filterCreated(event.target.value))
+        dispatch(filterCreated(event.target.value));
+        pages(1);
     }
 
 
