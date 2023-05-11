@@ -5,6 +5,7 @@ import imageredux from "./redux.jpg";
 import imagepostgresql from "./postgresql.jpg";
 import imagenodejs from "./node.jpg";
 import imageexpress from "./express.jpg";
+import { Link } from "react-router-dom";
 // import imagedog from "../../../public/doggie.jpg";
 
 const Landing = () =>{
@@ -15,7 +16,7 @@ const Landing = () =>{
             <main className={style.mainContainer}>
 
 
-
+                <Link to= '/home'>
 
                 <section className={style.secondContainer}>
                     <h2 className={style.mainContainerTitle}> Dogs Proyecto Individual</h2>
@@ -58,13 +59,13 @@ const Landing = () =>{
 
                 </section>
 
-
+                </Link>
 
 
 
             <div className={style.attribution}>
                 <h3>Coded by Felipe Salazar | 2023</h3>
-                <h3><a>Linkedin</a>   |  <a>Github</a></h3>
+                <h3><a><Link to={{pathname:"https://github.com/andressalazar08"}} target='_blank' style={{textDecoration: 'none'}}>Github</Link></a>   |  <a><Link to={{pathname:"https://linkedin.com/in/felipe-salazar-ramos-7b3923220"}} target='_blank' style={{textDecoration: 'none'}}>Linkedin</Link></a></h3>
 
 
 
