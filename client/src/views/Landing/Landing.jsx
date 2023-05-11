@@ -16,7 +16,7 @@ const Landing = () =>{
             <main className={style.mainContainer}>
 
 
-                <Link to= '/home'>
+                <Link to= '/home' style={{textDecoration: 'none'}}>
 
                 <section className={style.secondContainer}>
                     <h2 className={style.mainContainerTitle}> Dogs Proyecto Individual</h2>
