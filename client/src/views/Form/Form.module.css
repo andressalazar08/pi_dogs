@@ -1,0 +1,32 @@
+.container_input{
+
+    margin:auto;
+    /* border: 5px solid green; */
+    width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.container_box {
+    /* border: 5px solid red; */
+    width: 500px;
+    display: flex;
+
+    text-align: center;
+    display:inline;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.container_box_input{
+    width: 490px;
+    margin: 4px;
+    border-radius: 5px;
+    padding: 0.4rem;
+}
+
+
+.container_box button{
+    margin-top: 5px;
+
+}

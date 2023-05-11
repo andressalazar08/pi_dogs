@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 
+import style from "./Form.module.css";
+
 
 const Form = () =>{
 
@@ -67,48 +69,68 @@ const Form = () =>{
 
 
             <form onSubmit={submitHandler}>
-                <div>
+                <div className={style.container_input}>
+                    <div className={style.container_box}>
                     <label>Name: </label>
-                    <input type="text" value={form.name} onChange={changeHandler} name="name"></input>
+                    <input type="text" value={form.name} onChange={changeHandler} name="name" className={style.container_box_input} ></input>
                     {errors.name && <span>{errors.name}</span>}
+                    </div>
                 </div>
 
-                <div>
+                <div className={style.container_input}>
+                    <div className={style.container_box}>
                     <label>Min Height: </label>
-                    <input type="number" value={form.min_height} onChange={changeHandler}  name="min_height" />
+                    <input type="number" value={form.min_height} onChange={changeHandler}  name="min_height"  className={style.container_box_input}/>
+                    </div>
                 </div>
 
-                <div>
+                <div className={style.container_input}>
+                    <div className={style.container_box}>
                     <label>Max Height: </label>
-                    <input type="number" value={form.max_height} onChange={changeHandler}  name="max_height" />
+                    <input type="number" value={form.max_height} onChange={changeHandler}  name="max_height" className={style.container_box_input} />
+                    </div>
                 </div>
 
-                <div>
+                <div className={style.container_input}>
+                    <div className={style.container_box}>
                     <label>Min Weight: </label>
-                    <input type="number" value={form.min_weight} onChange={changeHandler}  name="min_weight" />
+                    <input type="number" value={form.min_weight} onChange={changeHandler}  name="min_weight" className={style.container_box_input}/>
+                    </div>
                 </div>
 
-                <div>
+                <div className={style.container_input}>
+                    <div className={style.container_box}>
                     <label>Max Weight: </label>
-                    <input type="number" value={form.max_weight} onChange={changeHandler}  name="max_weight" />
+                    <input type="number" value={form.max_weight} onChange={changeHandler}  name="max_weight" className={style.container_box_input}/>
+                    </div>
                 </div>
 
-                <div>
+                <div className={style.container_input}>
+                    <div className={style.container_box}>
                     <label>Temperament: </label>
-                    <input type="text" value={form.temperament} onChange={changeHandler}  name="temperament" />
+                    <input type="text" value={form.temperament} onChange={changeHandler}  name="temperament" className={style.container_box_input}/>
+                    </div>
                 </div>
 
-                <div>
+                <div className={style.container_input}>
+                    <div className={style.container_box}>
                     <label>Life Span: </label>
-                    <input type="text" value={form.life_span} onChange={changeHandler} name="life_span" />
+                    <input type="text" value={form.life_span} onChange={changeHandler} name="life_span" className={style.container_box_input}/>
+                    </div>
                 </div>
 
-                <div>
+                <div className={style.container_input}>
+                    <div className={style.container_box}>
                     <label>Image: </label>
-                    <input type="text" value={form.image} onChange={changeHandler} name="image" />
+                    <input type="text" value={form.image} onChange={changeHandler} name="image" className={style.container_box_input}/>
+                    </div>
                 </div>
 
-                <button type="submit">CREAR</button>
+                <div className={style.container_input}>
+                <div className={style.container_box}>
+                    <button type="submit">CREAR</button>
+                </div>
+                </div>
 
             </form>
 
