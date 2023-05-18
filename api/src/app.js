@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
 const cors = require("cors");
-const BASE_URL = process.env.BASE_URL
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3000'
 
 require('./db.js');
 
